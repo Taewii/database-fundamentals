@@ -1,1 +1,1 @@
-# databse-fundamentals
+SoftUni Software Engineering - Database Fundamentals
