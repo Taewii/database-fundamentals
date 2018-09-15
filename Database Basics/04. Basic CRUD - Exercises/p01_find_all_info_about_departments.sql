@@ -1,0 +1,1 @@
+SELECT * FROM departments ORDER BY departments.department_id ASC;
