@@ -1,0 +1,1 @@
+SELECT * FROM towns WHERE LEFT(NAME, 1) NOT IN ('r', 'b', 'd') ORDER BY `name` ASC;
