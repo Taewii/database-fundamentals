@@ -1,0 +1,13 @@
+CREATE TABLE `authors`(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	`name` VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE `books`(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	`name` VARCHAR(30) NOT NULL,
+	author_id INT NOT NULL,
+	CONSTRAINT fk_author_id FOREIGN KEY (author_id)
+	REFERENCES `authors`(id)
+	ON DELETE CASCADE
+);
