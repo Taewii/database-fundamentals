@@ -1,33 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be37f469-209b-47a1-be93-0ac7e9f053f1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/bookshop/Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/bookshop/ConsoleRunner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/bookshop/enums/AgeRestriction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/bookshop/enums/EditionType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/bookshop/models/Author.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/bookshop/models/Book.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/bookshop/models/Category.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/bookshop/repositories/AuthorRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/bookshop/repositories/BookRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/bookshop/repositories/CategoryRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/bookshop/services/contracts/AuthorService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/bookshop/services/contracts/BookService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/bookshop/services/contracts/CategoryService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/bookshop/services/impl/AuthorServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/bookshop/services/impl/BookServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/bookshop/services/impl/CategoryServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/resources/authors.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/resources/books.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/resources/categories.txt" beforeDir="false" />
-    </list>
+    <list default="true" id="be37f469-209b-47a1-be93-0ac7e9f053f1" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,8 +47,8 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="1" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
     </session>
@@ -99,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/user/ConsoleRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-184">
-              <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+            <state relative-caret-position="1173">
+              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
             </state>
           </provider>
         </entry>
@@ -170,11 +144,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/user/Application.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="184">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -189,8 +163,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/user/Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/user/models/entities/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/user/ConsoleRunner.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/user/ConsoleRunner.java" />
       </list>
     </option>
   </component>
@@ -219,6 +193,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -256,9 +233,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -315,16 +289,18 @@
       <updated>1539940031723</updated>
       <workItem from="1539940045849" duration="559000" />
       <workItem from="1539940745408" duration="134000" />
+      <workItem from="1539941209291" duration="1289000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="693000" />
+    <option name="totallyTimeSpent" value="1982000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="248" y="58" width="1365" height="863" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24981467" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24981467" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -466,6 +442,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/user/services/impl/CountryServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -498,24 +481,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/java/user/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+        <state relative-caret-position="184">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/user/ConsoleRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-184">
-          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/user/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="1173">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
         </state>
       </provider>
     </entry>
