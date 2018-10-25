@@ -1,6 +1,11 @@
 package gamestore.models.entities;
 
+import gamestore.models.enums.Role;
+
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -10,17 +15,33 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String fullName;
+
+    @Column(unique = true)
+    @Pattern(regexp = "^.*@.*\\..*$", message = "Incorrect email.")
     private String email;
+
+    @Size(min = 5, message = "Password too short")
+    @Pattern(regexp = ".*[A-Z].*[0-1]+.*", message = "Incorrect username/password.")
     private String password;
 
     @ManyToMany
+    @JoinTable(name = "user_games",
+            inverseJoinColumns = @JoinColumn(name = "game_id"))
     private Set<Game> games;
 
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
     @ManyToMany
-    private Set<Role> roles;
+    @JoinTable(name = "user_shopping_cart_games",
+            inverseJoinColumns = @JoinColumn(name = "game_id"))
+    private Set<Game> shoppingCart;
 
     public User() {
+        this.games = new HashSet<>();
+        this.shoppingCart = new HashSet<>();
     }
 
     public Long getId() {
@@ -63,11 +84,19 @@ public class User {
         this.games = games;
     }
 
-    public Set<Role> getRoles() {
-        return this.roles;
+    public void setRole(Role role) {
+        this.role = role;
     }
 
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
+    public Role getRole() {
+        return this.role;
+    }
+
+    public Set<Game> getShoppingCart() {
+        return this.shoppingCart;
+    }
+
+    public void setShoppingCart(Set<Game> shoppingCart) {
+        this.shoppingCart = shoppingCart;
     }
 }

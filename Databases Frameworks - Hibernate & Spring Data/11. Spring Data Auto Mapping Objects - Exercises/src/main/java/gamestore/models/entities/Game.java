@@ -1,9 +1,12 @@
 package gamestore.models.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.Set;
 
 @Entity
 @Table(name = "games")
@@ -12,15 +15,28 @@ public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Pattern(regexp = "[A-Z].{2,}", message = "Invalid title")
     private String title;
-    private String trailerYoutubeId;
+
+    @Size(min = 11, max = 11, message = "Invalid title")
+    private String youtubeTrailer;
+
+    @Pattern(regexp = "(https://|http://).*", message = "Invalid Image URL")
     private String imageURL;
+
+    @Min(value = 0, message = "Size must be positive")
+    @Digits(integer = 10, fraction = 1)
     private double size;
+
+    @Min(value = 0, message = "Price must be positive")
+    @Digits(integer = 10, fraction = 2)
     private BigDecimal price;
+
+    @Size(min = 20, message = "Size must be at least 20 symbols")
     private String description;
+
     private Date releaseDate;
-    @ManyToMany(mappedBy = "games")
-    private Set<User> users;
 
     public Game() {
     }
@@ -41,12 +57,12 @@ public class Game {
         this.title = title;
     }
 
-    public String getTrailerYoutubeId() {
-        return this.trailerYoutubeId;
+    public String getYoutubeTrailer() {
+        return this.youtubeTrailer;
     }
 
-    public void setTrailerYoutubeId(String trailerYoutubeId) {
-        this.trailerYoutubeId = trailerYoutubeId;
+    public void setYoutubeTrailer(String youtubeTrailer) {
+        this.youtubeTrailer = youtubeTrailer;
     }
 
     public String getImageURL() {
@@ -87,13 +103,5 @@ public class Game {
 
     public void setReleaseDate(Date releaseDate) {
         this.releaseDate = releaseDate;
-    }
-
-    public Set<User> getUsers() {
-        return this.users;
-    }
-
-    public void setUsers(Set<User> users) {
-        this.users = users;
     }
 }
