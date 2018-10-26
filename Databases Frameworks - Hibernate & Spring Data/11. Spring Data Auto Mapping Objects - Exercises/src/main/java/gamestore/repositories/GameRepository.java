@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository;
 public interface GameRepository extends JpaRepository<Game, Long> {
 
     Game findGameById(Long id);
+
+    Game findGameByTitle(String title);
 }

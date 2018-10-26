@@ -1,4 +1,4 @@
-package gamestore.models.dtos;
+package gamestore.models.dtos.binding;
 
 import java.math.BigDecimal;
 import java.util.Date;

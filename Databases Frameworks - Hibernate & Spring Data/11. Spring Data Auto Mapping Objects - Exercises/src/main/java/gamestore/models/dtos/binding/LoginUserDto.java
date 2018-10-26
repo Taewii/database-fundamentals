@@ -1,4 +1,4 @@
-package gamestore.models.dtos;
+package gamestore.models.dtos.binding;
 
 public class LoginUserDto {
 

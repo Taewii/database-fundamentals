@@ -1,7 +1,11 @@
 package gamestore.services.game;
 
-import gamestore.models.dtos.AddGameDto;
+import gamestore.models.dtos.binding.AddGameDto;
+import gamestore.models.dtos.view.GameDetailViewDto;
+import gamestore.models.dtos.view.GameViewDto;
+import gamestore.models.dtos.view.OwnedGameDto;
 import gamestore.models.entities.Game;
+import gamestore.models.entities.User;
 import gamestore.models.utils.ObjectValidator;
 import gamestore.repositories.GameRepository;
 import org.modelmapper.ModelMapper;
@@ -13,7 +17,9 @@ import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -92,5 +98,53 @@ public class GameServiceImpl implements GameService {
         String tile = game.getTitle();
         this.gameRepository.delete(game);
         return String.format("Deleted %s", tile);
+    }
+
+    @Override
+    public String viewAll() {
+        StringBuilder sb = new StringBuilder();
+        this.gameRepository.findAll()
+                .stream()
+                .map(g -> this.modelMapper.map(g, GameViewDto.class))
+                .forEach(g -> sb.append(g).append(System.lineSeparator()));
+
+        return sb.toString().trim();
+    }
+
+    @Override
+    public String viewDetails(String title) {
+        Game game = this.gameRepository.findGameByTitle(title);
+
+        if (game == null) {
+            return "Game with such title doesn't exist.";
+        }
+
+        GameDetailViewDto gameDto = this.modelMapper.map(game, GameDetailViewDto.class);
+
+        return gameDto.toString();
+    }
+
+    @Override
+    public Game getGameByTitle(String title) {
+        return this.gameRepository.findGameByTitle(title);
+    }
+
+    @Override
+    public String viewOwnedGames(User user) {
+        StringBuilder sb = new StringBuilder();
+        List<OwnedGameDto> gameDtos = user.getGames()
+                .stream()
+                .map(g -> this.modelMapper.map(g, OwnedGameDto.class))
+                .collect(Collectors.toList());
+
+        if (gameDtos.size() > 0) {
+            for (OwnedGameDto gameDto : gameDtos) {
+                sb.append(gameDto.getTitle()).append(System.lineSeparator());
+            }
+
+            return sb.toString().trim();
+        } else {
+            return "User doesn't own any games.";
+        }
     }
 }

@@ -1,8 +1,8 @@
 package gamestore;
 
-import gamestore.models.dtos.AddGameDto;
-import gamestore.models.dtos.LoginUserDto;
-import gamestore.models.dtos.RegisterUserDto;
+import gamestore.models.dtos.binding.AddGameDto;
+import gamestore.models.dtos.binding.LoginUserDto;
+import gamestore.models.dtos.binding.RegisterUserDto;
 import gamestore.models.entities.Game;
 import gamestore.models.entities.User;
 import gamestore.models.enums.Role;
@@ -42,6 +42,8 @@ public class ConsoleRunner implements CommandLineRunner {
             String[] tokens = input.split("\\|");
             String command = tokens[0];
             String result = "";
+            User user;
+            Game game;
 
             switch (command) {
                 case "RegisterUser":
@@ -50,7 +52,7 @@ public class ConsoleRunner implements CommandLineRunner {
                     break;
                 case "LoginUser":
                     LoginUserDto loginUserDto = new LoginUserDto(tokens[1], tokens[2]);
-                    User user = this.userService.login(loginUserDto);
+                    user = this.userService.login(loginUserDto);
                     if (user != null) {
                         this.setLoggedInUser(user);
                         result = String.format("Successfully logged in %s", user.getFullName());
@@ -84,7 +86,7 @@ public class ConsoleRunner implements CommandLineRunner {
                 case "EditGame":
                     if (this.getLoggedInUser() != null) {
                         if (this.getLoggedInUser().getRole().equals(Role.ADMIN)) {
-                            Game game = this.gameService.getById(Long.parseLong(tokens[1]));
+                            game = this.gameService.getById(Long.parseLong(tokens[1]));
                             if (game != null) {
                                 result = this.gameService.update(game, Arrays.stream(tokens).skip(2).toArray(String[]::new));
                             } else {
@@ -100,7 +102,7 @@ public class ConsoleRunner implements CommandLineRunner {
                 case "DeleteGame":
                     if (this.getLoggedInUser() != null) {
                         if (this.getLoggedInUser().getRole().equals(Role.ADMIN)) {
-                            Game game = this.gameService.getById(Long.parseLong(tokens[1]));
+                            game = this.gameService.getById(Long.parseLong(tokens[1]));
                             if (game != null) {
                                 result = this.gameService.delete(game);
                             } else {
@@ -113,8 +115,54 @@ public class ConsoleRunner implements CommandLineRunner {
                         result = "No user is logged in";
                     }
                     break;
+                case "AllGame":
+                    result = this.gameService.viewAll();
+                    break;
+                case "DetailGame":
+                    result = this.gameService.viewDetails(tokens[1]);
+                    break;
+                case "OwnedGame":
+                    user = this.getLoggedInUser();
+                    if (user != null) {
+                        result = this.gameService.viewOwnedGames(user);
+                    } else {
+                        result = "No user is logged in";
+                    }
+                    break;
+                case "AddItem":
+                    game = this.gameService.getGameByTitle(tokens[1]);
+                    user = this.getLoggedInUser();
+                    if (user != null) {
+                        if (game != null) {
+                            result = this.userService.addGame(user, game);
+                        } else {
+                            result = "Game with such title doesn't exist";
+                        }
+                    } else {
+                        result = "No user is logged in";
+                    }
+                    break;
+                case "RemoveItem":
+                    game = this.gameService.getGameByTitle(tokens[1]);
+                    user = this.getLoggedInUser();
+                    if (user != null) {
+                        if (game != null) {
+                            result = this.userService.removeGame(user, game);
+                        } else {
+                            result = "Game with such title doesn't exist";
+                        }
+                    } else {
+                        result = "No user is logged in";
+                    }
+                    break;
+                case "BuyItem":
+                    user = this.getLoggedInUser();
+                    if (user != null) {
+                        result = this.userService.buyGames(user);
+                    } else {
+                        result = "No user is logged in";
+                    }
             }
-
             System.out.println(result);
         }
     }

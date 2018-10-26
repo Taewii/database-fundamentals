@@ -26,7 +26,7 @@ public class User {
     @Pattern(regexp = ".*[A-Z].*[0-1]+.*", message = "Incorrect username/password.")
     private String password;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "user_games",
             inverseJoinColumns = @JoinColumn(name = "game_id"))
     private Set<Game> games;
@@ -34,7 +34,7 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "user_shopping_cart_games",
             inverseJoinColumns = @JoinColumn(name = "game_id"))
     private Set<Game> shoppingCart;
