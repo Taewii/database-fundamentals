@@ -1,0 +1,53 @@
+[
+  {
+    "firstName": "John",
+    "lastName": "Snow",
+    "address": {
+      "country": "Spain",
+      "city": "Barcelona",
+      "street": "Barcelona 12"
+    },
+    "phoneNumbers": [
+      {
+        "number": "1341341"
+      },
+      {
+        "number": "542152"
+      }
+    ]
+  },
+  {
+    "firstName": "Kiro",
+    "lastName": "Skalichkata",
+    "address": {
+      "country": "Germany",
+      "city": "Berlin",
+      "street": "Doly, na spirkata"
+    },
+    "phoneNumbers": [
+      {
+        "number": "135253"
+      },
+      {
+        "number": "23535"
+      }
+    ]
+  },
+  {
+    "firstName": "Mitio",
+    "lastName": "Pishtovcheto",
+    "address": {
+      "country": "Poland",
+      "city": "Auschwitz",
+      "street": "Mai zabraih furnata vkluchena"
+    },
+    "phoneNumbers": [
+      {
+        "number": "54534"
+      },
+      {
+        "number": "345345"
+      }
+    ]
+  }
+]
