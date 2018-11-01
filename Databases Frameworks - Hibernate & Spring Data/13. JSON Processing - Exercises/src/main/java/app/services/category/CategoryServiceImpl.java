@@ -1,6 +1,7 @@
 package app.services.category;
 
-import app.models.dtos.CategoryDto;
+import app.models.dtos.binding.CategoryDto;
+import app.models.dtos.view.CategoriesByProductsDto;
 import app.models.entities.Category;
 import app.repositories.CategoryRepository;
 import org.modelmapper.ModelMapper;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
+import java.util.List;
 
 @Service
 @Transactional
@@ -27,5 +29,10 @@ public class CategoryServiceImpl implements CategoryService {
 	public void saveAll(CategoryDto[] categoriesDto) {
 		Category[] categories = this.modelMapper.map(categoriesDto, Category[].class);
 		this.categoryRepository.saveAll(Arrays.asList(categories));
+	}
+
+	@Override
+	public List<CategoriesByProductsDto> categoriesByProductCount() {
+		return this.categoryRepository.categoriesByProductCount();
 	}
 }

@@ -12,6 +12,5 @@ public class ModelMapperUtil {
     }
 
     private void initialize() {
-
     }
 }

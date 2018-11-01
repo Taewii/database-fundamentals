@@ -1,4 +1,4 @@
-package app.models.dtos;
+package app.models.dtos.binding;
 
 import javax.validation.constraints.Size;
 import java.io.Serializable;

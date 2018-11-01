@@ -1,6 +1,8 @@
 package app.services.user;
 
-import app.models.dtos.UserDto;
+import app.models.dtos.binding.UserDto;
+import app.models.dtos.view.SuccessfulUserDto;
+import app.models.dtos.view.query4.UsersCountAndUsersDto;
 import app.models.entities.User;
 import app.repositories.UserRepository;
 import org.modelmapper.ModelMapper;
@@ -9,6 +11,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -37,4 +41,19 @@ public class UserServiceImpl implements UserService {
 			}
 		}
 	}
+
+	@Override
+	public List<SuccessfulUserDto> usersWithAtleastOneProductSold() {
+		List<User> users = this.userRepository.usersWithAtleastOneProductSold();
+		return users.stream()
+				.map(u -> this.modelMapper.map(u, SuccessfulUserDto.class))
+				.collect(Collectors.toList());
+	}
+
+	@Override
+	public UsersCountAndUsersDto userCountWithUsersAndProductCountWithProducts() {
+
+		return null;
+	}
+
 }

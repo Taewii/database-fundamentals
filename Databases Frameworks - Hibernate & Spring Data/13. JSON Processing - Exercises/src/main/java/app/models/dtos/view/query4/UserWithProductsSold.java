@@ -1,16 +1,15 @@
-package app.models.dtos;
+package app.models.dtos.view.query4;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.io.Serializable;
 
-public class UserDto implements Serializable {
+public class UserWithProductsSold implements Serializable {
 
     private String firstName;
     private String lastName;
     private Integer age;
+    private ProductCountAndProductsDto productsSold;
 
-    public UserDto() {
+    public UserWithProductsSold() {
     }
 
     public String getFirstName() {
@@ -21,8 +20,6 @@ public class UserDto implements Serializable {
         this.firstName = firstName;
     }
 
-    @NotNull
-    @Size(min = 3)
     public String getLastName() {
         return this.lastName;
     }
@@ -37,5 +34,14 @@ public class UserDto implements Serializable {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+
+    public ProductCountAndProductsDto getProductsSold() {
+        return this.productsSold;
+    }
+
+    public void setProductsSold(ProductCountAndProductsDto productsSold) {
+        this.productsSold = productsSold;
     }
 }
