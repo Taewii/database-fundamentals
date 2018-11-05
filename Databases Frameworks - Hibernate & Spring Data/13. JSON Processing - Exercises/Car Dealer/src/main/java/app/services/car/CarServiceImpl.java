@@ -1,6 +1,7 @@
 package app.services.car;
 
 import app.models.dto.binding.CarDto;
+import app.models.dto.view.CarViewModel;
 import app.models.entity.Car;
 import app.models.entity.Part;
 import app.repositories.CarRepository;
@@ -19,37 +20,44 @@ import java.util.stream.Collectors;
 @Transactional
 public class CarServiceImpl implements CarService {
 
-	private final CarRepository carRepository;
-	private final PartRepository partRepository;
-	private final ModelMapper modelMapper;
+    private final CarRepository carRepository;
+    private final PartRepository partRepository;
+    private final ModelMapper modelMapper;
 
-	@Autowired
-	public CarServiceImpl(CarRepository carRepository,
-						  PartRepository partRepository,
-						  ModelMapper modelMapper) {
-		this.carRepository = carRepository;
-		this.partRepository = partRepository;
-		this.modelMapper = modelMapper;
-	}
+    @Autowired
+    public CarServiceImpl(CarRepository carRepository,
+                          PartRepository partRepository,
+                          ModelMapper modelMapper) {
+        this.carRepository = carRepository;
+        this.partRepository = partRepository;
+        this.modelMapper = modelMapper;
+    }
 
-	@Override
-	public void saveAll(CarDto[] carDtos) {
-		List<Car> cars = Arrays.stream(carDtos)
-				.map(c -> this.modelMapper.map(c, Car.class))
-				.collect(Collectors.toList());
-		Random random = new Random();
+    @Override
+    public void saveAll(CarDto[] carDtos) {
+        List<Car> cars = Arrays.stream(carDtos)
+                .map(c -> this.modelMapper.map(c, Car.class))
+                .collect(Collectors.toList());
+        Random random = new Random();
 
-		for (Car car : cars) {
-			List<Part> parts = this.partRepository.get20RandomParts();
-			for (Part part : parts) {
-				car.getParts().add(part);
-				part.getCars().add(car);
-				if (random.nextInt(5) == 0 && car.getParts().size() >= 15) {
-					break;
-				}
-			}
-		}
+        for (Car car : cars) {
+            List<Part> parts = this.partRepository.get20RandomParts();
+            for (Part part : parts) {
+                car.getParts().add(part);
+                part.getCars().add(car);
+                if (random.nextInt(5) == 0 && car.getParts().size() >= 15) {
+                    break;
+                }
+            }
+        }
 
-		this.carRepository.saveAll(cars);
-	}
+        this.carRepository.saveAll(cars);
+    }
+
+    @Override
+    public List<CarViewModel> carsByBrandName(String brand) {
+        List<Car> cars = this.carRepository.carsByBrandNameOrderedByModelAndTravelledDistance(brand);
+
+        return cars.stream().map(c -> this.modelMapper.map(c, CarViewModel.class)).collect(Collectors.toList());
+    }
 }

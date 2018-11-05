@@ -1,6 +1,9 @@
 package app.utils;
 
+import app.models.dto.view.SupplierViewModel;
+import app.models.entity.Supplier;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.PropertyMap;
 
 public class ModelMapperUtil {
 
@@ -12,5 +15,15 @@ public class ModelMapperUtil {
     }
 
     private void initialize() {
+        setPartCount();
+    }
+
+    private void setPartCount() {
+        this.modelMapper.addMappings(new PropertyMap<Supplier, SupplierViewModel>() {
+            @Override
+            protected void configure() {
+                map().setPartsCount(source.getParts().size());
+            }
+        });
     }
 }

@@ -4,6 +4,9 @@ import app.models.dto.binding.CarDto;
 import app.models.dto.binding.CustomerDto;
 import app.models.dto.binding.PartDto;
 import app.models.dto.binding.SupplierDto;
+import app.models.dto.view.CarViewModel;
+import app.models.dto.view.CustomerViewModel;
+import app.models.dto.view.SupplierViewModel;
 import app.services.car.CarService;
 import app.services.customer.CustomerService;
 import app.services.part.PartService;
@@ -14,6 +17,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Controller
 @Transactional
@@ -50,6 +55,25 @@ public class Terminal implements CommandLineRunner {
         insertCars();
         insertCustomers();
         this.saleService.insertSales();
+
+        exportOrderedCustomers();
+        exportToyotaCars();
+        extractLocalSuppliers();
+    }
+
+    private void extractLocalSuppliers() {
+        List<SupplierViewModel> localSuppliers = this.supplierService.getLocalSuppliers();
+        this.jsonParser.objectToFile(localSuppliers, RESOURCES_PATH + "/output/local-suppliers.json");
+    }
+
+    private void exportToyotaCars() {
+        List<CarViewModel> cars = this.carService.carsByBrandName("Toyota");
+        this.jsonParser.objectToFile(cars, RESOURCES_PATH + "/output/toyota-cars.json");
+    }
+
+    private void exportOrderedCustomers() {
+        List<CustomerViewModel> orderedCustomers = this.customerService.getOrderedCustomers();
+        this.jsonParser.objectToFile(orderedCustomers, RESOURCES_PATH + "/output/ordered-customers.json");
     }
 
     private void insertCustomers() {

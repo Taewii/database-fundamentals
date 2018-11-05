@@ -1,6 +1,7 @@
 package app.services.customer;
 
 import app.models.dto.binding.CustomerDto;
+import app.models.dto.view.CustomerViewModel;
 import app.models.entity.Customer;
 import app.repositories.CustomerRepository;
 import org.modelmapper.ModelMapper;
@@ -16,21 +17,31 @@ import java.util.stream.Collectors;
 @Transactional
 public class CustomerServiceImpl implements CustomerService {
 
-	private final CustomerRepository customerRepository;
-	private final ModelMapper modelMapper;
+    private final CustomerRepository customerRepository;
+    private final ModelMapper modelMapper;
 
-	@Autowired
-	public CustomerServiceImpl(CustomerRepository customerRepository, ModelMapper modelMapper) {
-		this.customerRepository = customerRepository;
-		this.modelMapper = modelMapper;
-	}
+    @Autowired
+    public CustomerServiceImpl(CustomerRepository customerRepository, ModelMapper modelMapper) {
+        this.customerRepository = customerRepository;
+        this.modelMapper = modelMapper;
+    }
 
-	@Override
-	public void saveAll(CustomerDto[] customerDtos) {
-		List<Customer> customers = Arrays.stream(customerDtos)
-				.map(c -> this.modelMapper.map(c, Customer.class))
-				.collect(Collectors.toList());
+    @Override
+    public void saveAll(CustomerDto[] customerDtos) {
+        List<Customer> customers = Arrays.stream(customerDtos)
+                .map(c -> this.modelMapper.map(c, Customer.class))
+                .collect(Collectors.toList());
 
-		this.customerRepository.saveAll(customers);
-	}
+        this.customerRepository.saveAll(customers);
+    }
+
+    @Override
+    public List<CustomerViewModel> getOrderedCustomers() {
+        List<Customer> customers = this.customerRepository.getCustomersOrderByBirthDateAndAndYoungDriver();
+        System.out.println();
+
+        return customers.stream()
+                .map(c -> this.modelMapper.map(c, CustomerViewModel.class))
+                .collect(Collectors.toList());
+    }
 }
