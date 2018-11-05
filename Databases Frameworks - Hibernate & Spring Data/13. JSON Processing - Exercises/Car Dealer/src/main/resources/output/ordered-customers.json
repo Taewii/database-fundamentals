@@ -1,0 +1,509 @@
+[
+  {
+    "id": 29,
+    "name": "Louann Holzworth",
+    "birthDate": "Oct 1, 1960 2:00:00 AM",
+    "isYoungDriver": false,
+    "sales": [
+      {
+        "discount": 30.0,
+        "car": {
+          "id": 124,
+          "make": "Toyota",
+          "model": "Corolla",
+          "travelledDistance": 21477
+        },
+        "customer": {
+          "name": "Louann Holzworth",
+          "birthDate": "Oct 1, 1960 2:00:00 AM",
+          "isYoungDriver": false
+        }
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Donnetta Soliz",
+    "birthDate": "Oct 1, 1963 2:00:00 AM",
+    "isYoungDriver": true,
+    "sales": [
+      {
+        "discount": 50.0,
+        "car": {
+          "id": 345,
+          "make": "Dacia",
+          "model": "Sandero Stepway",
+          "travelledDistance": 92233724775807
+        },
+        "customer": {
+          "name": "Donnetta Soliz",
+          "birthDate": "Oct 1, 1963 2:00:00 AM",
+          "isYoungDriver": true
+        }
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Rema Revelle",
+    "birthDate": "May 1, 1970 2:00:00 AM",
+    "isYoungDriver": true,
+    "sales": []
+  },
+  {
+    "id": 16,
+    "name": "Carri Knapik",
+    "birthDate": "Feb 2, 1972 2:00:00 AM",
+    "isYoungDriver": true,
+    "sales": [
+      {
+        "discount": 10.0,
+        "car": {
+          "id": 292,
+          "make": "Citroen",
+          "model": "Elysée",
+          "travelledDistance": 922354775807
+        },
+        "customer": {
+          "name": "Carri Knapik",
+          "birthDate": "Feb 2, 1972 2:00:00 AM",
+          "isYoungDriver": true
+        }
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Garret Capron",
+    "birthDate": "Jul 1, 1975 2:00:00 AM",
+    "isYoungDriver": false,
+    "sales": [
+      {
+        "discount": 15.0,
+        "car": {
+          "id": 135,
+          "make": "Toyota",
+          "model": "Prius",
+          "travelledDistance": 922337807
+        },
+        "customer": {
+          "name": "Garret Capron",
+          "birthDate": "Jul 1, 1975 2:00:00 AM",
+          "isYoungDriver": false
+        }
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Teddy Hobby",
+    "birthDate": "Oct 1, 1975 2:00:00 AM",
+    "isYoungDriver": true,
+    "sales": [
+      {
+        "discount": 20.0,
+        "car": {
+          "id": 105,
+          "make": "Toyota",
+          "model": "Tacoma",
+          "travelledDistance": 96854775807
+        },
+        "customer": {
+          "name": "Teddy Hobby",
+          "birthDate": "Oct 1, 1975 2:00:00 AM",
+          "isYoungDriver": true
+        }
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Audrea Cardinal",
+    "birthDate": "Oct 1, 1976 2:00:00 AM",
+    "isYoungDriver": false,
+    "sales": [
+      {
+        "discount": 20.0,
+        "car": {
+          "id": 271,
+          "make": "Peugeot",
+          "model": "306",
+          "travelledDistance": 2147483647
+        },
+        "customer": {
+          "name": "Audrea Cardinal",
+          "birthDate": "Oct 1, 1976 2:00:00 AM",
+          "isYoungDriver": false
+        }
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Francis Mckim",
+    "birthDate": "Oct 1, 1977 2:00:00 AM",
+    "isYoungDriver": true,
+    "sales": [
+      {
+        "discount": 30.0,
+        "car": {
+          "id": 74,
+          "make": "Mercedes",
+          "model": "W211",
+          "travelledDistance": 922775807
+        },
+        "customer": {
+          "name": "Francis Mckim",
+          "birthDate": "Oct 1, 1977 2:00:00 AM",
+          "isYoungDriver": true
+        }
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Brett Brickley",
+    "birthDate": "Oct 1, 1980 2:00:00 AM",
+    "isYoungDriver": true,
+    "sales": []
+  },
+  {
+    "id": 15,
+    "name": "Kristian Engberg",
+    "birthDate": "Oct 3, 1981 2:00:00 AM",
+    "isYoungDriver": false,
+    "sales": [
+      {
+        "discount": 0.0,
+        "car": {
+          "id": 254,
+          "make": "Alfa Romeo",
+          "model": "75",
+          "travelledDistance": 9223372775807
+        },
+        "customer": {
+          "name": "Kristian Engberg",
+          "birthDate": "Oct 3, 1981 2:00:00 AM",
+          "isYoungDriver": false
+        }
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Hipolito Lamoreaux",
+    "birthDate": "Aug 1, 1982 3:00:00 AM",
+    "isYoungDriver": true,
+    "sales": []
+  },
+  {
+    "id": 4,
+    "name": "Zada Attwood",
+    "birthDate": "Oct 1, 1982 2:00:00 AM",
+    "isYoungDriver": true,
+    "sales": [
+      {
+        "discount": 15.0,
+        "car": {
+          "id": 116,
+          "make": "Toyota",
+          "model": "Tacoma",
+          "travelledDistance": 9225807
+        },
+        "customer": {
+          "name": "Zada Attwood",
+          "birthDate": "Oct 1, 1982 2:00:00 AM",
+          "isYoungDriver": true
+        }
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Sylvie Mcelravy",
+    "birthDate": "Oct 1, 1983 2:00:00 AM",
+    "isYoungDriver": false,
+    "sales": [
+      {
+        "discount": 10.0,
+        "car": {
+          "id": 155,
+          "make": "Nissan",
+          "model": "GT-R",
+          "travelledDistance": 96854775807
+        },
+        "customer": {
+          "name": "Sylvie Mcelravy",
+          "birthDate": "Oct 1, 1983 2:00:00 AM",
+          "isYoungDriver": false
+        }
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Rico Peer",
+    "birthDate": "Oct 1, 1984 2:00:00 AM",
+    "isYoungDriver": true,
+    "sales": []
+  },
+  {
+    "id": 5,
+    "name": "Hai Everton",
+    "birthDate": "Oct 1, 1985 2:00:00 AM",
+    "isYoungDriver": true,
+    "sales": []
+  },
+  {
+    "id": 6,
+    "name": "Lino Subia",
+    "birthDate": "Dec 21, 1985 2:00:00 AM",
+    "isYoungDriver": false,
+    "sales": []
+  },
+  {
+    "id": 24,
+    "name": "Jimmy Grossi",
+    "birthDate": "Jul 1, 1986 3:00:00 AM",
+    "isYoungDriver": true,
+    "sales": []
+  },
+  {
+    "id": 12,
+    "name": "Carole Witman",
+    "birthDate": "Oct 1, 1987 2:00:00 AM",
+    "isYoungDriver": false,
+    "sales": []
+  },
+  {
+    "id": 13,
+    "name": "Oren Perlman",
+    "birthDate": "Oct 1, 1988 2:00:00 AM",
+    "isYoungDriver": true,
+    "sales": [
+      {
+        "discount": 40.0,
+        "car": {
+          "id": 150,
+          "make": "Nissan",
+          "model": "370Z",
+          "travelledDistance": 21447
+        },
+        "customer": {
+          "name": "Oren Perlman",
+          "birthDate": "Oct 1, 1988 2:00:00 AM",
+          "isYoungDriver": true
+        }
+      },
+      {
+        "discount": 40.0,
+        "car": {
+          "id": 224,
+          "make": "Lamborghini",
+          "model": "Gallardo",
+          "travelledDistance": 92234775807
+        },
+        "customer": {
+          "name": "Oren Perlman",
+          "birthDate": "Oct 1, 1988 2:00:00 AM",
+          "isYoungDriver": true
+        }
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Natalie Poli",
+    "birthDate": "Oct 4, 1990 2:00:00 AM",
+    "isYoungDriver": false,
+    "sales": [
+      {
+        "discount": 20.0,
+        "car": {
+          "id": 214,
+          "make": "Rolls-Royce",
+          "model": "Phantom Drophead Coupé",
+          "travelledDistance": 92233775807
+        },
+        "customer": {
+          "name": "Natalie Poli",
+          "birthDate": "Oct 4, 1990 2:00:00 AM",
+          "isYoungDriver": false
+        }
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Marcelle Griego",
+    "birthDate": "Oct 4, 1990 2:00:00 AM",
+    "isYoungDriver": true,
+    "sales": []
+  },
+  {
+    "id": 19,
+    "name": "Yvonne Mccalla",
+    "birthDate": "Mar 2, 1992 2:00:00 AM",
+    "isYoungDriver": true,
+    "sales": []
+  },
+  {
+    "id": 30,
+    "name": "Ann Mcenaney",
+    "birthDate": "Mar 2, 1992 2:00:00 AM",
+    "isYoungDriver": true,
+    "sales": []
+  },
+  {
+    "id": 21,
+    "name": "Cinthia Lasala",
+    "birthDate": "Nov 1, 1992 2:00:00 AM",
+    "isYoungDriver": true,
+    "sales": [
+      {
+        "discount": 10.0,
+        "car": {
+          "id": 334,
+          "make": "Skoda",
+          "model": "Citigo",
+          "travelledDistance": 214747
+        },
+        "customer": {
+          "name": "Cinthia Lasala",
+          "birthDate": "Nov 1, 1992 2:00:00 AM",
+          "isYoungDriver": true
+        }
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Emmitt Benally",
+    "birthDate": "Nov 20, 1993 2:00:00 AM",
+    "isYoungDriver": true,
+    "sales": [
+      {
+        "discount": 0.0,
+        "car": {
+          "id": 255,
+          "make": "Alfa Romeo",
+          "model": "AR51",
+          "travelledDistance": 922337275807
+        },
+        "customer": {
+          "name": "Emmitt Benally",
+          "birthDate": "Nov 20, 1993 2:00:00 AM",
+          "isYoungDriver": true
+        }
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Nisha Markwell",
+    "birthDate": "Apr 4, 1994 3:00:00 AM",
+    "isYoungDriver": false,
+    "sales": [
+      {
+        "discount": 30.0,
+        "car": {
+          "id": 13,
+          "make": "Opel",
+          "model": "Astra",
+          "travelledDistance": 2147483647
+        },
+        "customer": {
+          "name": "Nisha Markwell",
+          "birthDate": "Apr 4, 1994 3:00:00 AM",
+          "isYoungDriver": false
+        }
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Faustina Burgher",
+    "birthDate": "Jun 1, 1994 3:00:00 AM",
+    "isYoungDriver": false,
+    "sales": [
+      {
+        "discount": 5.0,
+        "car": {
+          "id": 220,
+          "make": "Rolls-Royce",
+          "model": "Wraith",
+          "travelledDistance": 2147483647
+        },
+        "customer": {
+          "name": "Faustina Burgher",
+          "birthDate": "Jun 1, 1994 3:00:00 AM",
+          "isYoungDriver": false
+        }
+      },
+      {
+        "discount": 50.0,
+        "car": {
+          "id": 237,
+          "make": "Ferrari",
+          "model": "250 GTO",
+          "travelledDistance": 214747
+        },
+        "customer": {
+          "name": "Faustina Burgher",
+          "birthDate": "Jun 1, 1994 3:00:00 AM",
+          "isYoungDriver": false
+        }
+      },
+      {
+        "discount": 50.0,
+        "car": {
+          "id": 282,
+          "make": "Peugeot",
+          "model": "405",
+          "travelledDistance": 92233854775807
+        },
+        "customer": {
+          "name": "Faustina Burgher",
+          "birthDate": "Jun 1, 1994 3:00:00 AM",
+          "isYoungDriver": false
+        }
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Taina Achenbach",
+    "birthDate": "Oct 1, 1994 2:00:00 AM",
+    "isYoungDriver": false,
+    "sales": []
+  },
+  {
+    "id": 9,
+    "name": "Johnette Derryberry",
+    "birthDate": "Oct 1, 1995 2:00:00 AM",
+    "isYoungDriver": true,
+    "sales": []
+  },
+  {
+    "id": 22,
+    "name": "Daniele Zarate",
+    "birthDate": "Oct 5, 1995 2:00:00 AM",
+    "isYoungDriver": false,
+    "sales": [
+      {
+        "discount": 5.0,
+        "car": {
+          "id": 306,
+          "make": "Citroen",
+          "model": "Elysée",
+          "travelledDistance": 23336854775
+        },
+        "customer": {
+          "name": "Daniele Zarate",
+          "birthDate": "Oct 5, 1995 2:00:00 AM",
+          "isYoungDriver": false
+        }
+      }
+    ]
+  }
+]
