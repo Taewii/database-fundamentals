@@ -1,7 +1,7 @@
 package app.services.supplier;
 
 import app.models.dto.binding.SupplierDto;
-import app.models.dto.view.SupplierViewModel;
+import app.models.dto.view.supplier.SupplierViewModel;
 import app.models.entity.Supplier;
 import app.repositories.SupplierRepository;
 import org.modelmapper.ModelMapper;

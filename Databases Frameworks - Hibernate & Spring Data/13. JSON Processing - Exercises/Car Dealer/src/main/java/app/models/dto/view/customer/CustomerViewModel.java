@@ -1,4 +1,6 @@
-package app.models.dto.view;
+package app.models.dto.view.customer;
+
+import app.models.dto.view.sale.SaleViewModel;
 
 import java.io.Serializable;
 import java.util.Date;

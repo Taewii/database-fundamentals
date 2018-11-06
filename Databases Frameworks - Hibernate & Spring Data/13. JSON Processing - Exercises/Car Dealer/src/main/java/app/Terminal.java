@@ -4,9 +4,12 @@ import app.models.dto.binding.CarDto;
 import app.models.dto.binding.CustomerDto;
 import app.models.dto.binding.PartDto;
 import app.models.dto.binding.SupplierDto;
-import app.models.dto.view.CarViewModel;
-import app.models.dto.view.CustomerViewModel;
-import app.models.dto.view.SupplierViewModel;
+import app.models.dto.view.car.CarViewModel;
+import app.models.dto.view.car.CarViewModelWithParts;
+import app.models.dto.view.customer.CustomerTotalSalesViewModel;
+import app.models.dto.view.customer.CustomerViewModel;
+import app.models.dto.view.sale.SaleDiscountsViewModel;
+import app.models.dto.view.supplier.SupplierViewModel;
 import app.services.car.CarService;
 import app.services.customer.CustomerService;
 import app.services.part.PartService;
@@ -50,18 +53,38 @@ public class Terminal implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
+        //importing data
         insertSuppliers();
         insertParts();
         insertCars();
         insertCustomers();
         this.saleService.insertSales();
 
+        //extracting data
         exportOrderedCustomers();
         exportToyotaCars();
-        extractLocalSuppliers();
+        exportLocalSuppliers();
+        exportCarsWithParts();
+        exportCustomersTotalSales();
+        exportSalesWithAndWithoutDiscount();
     }
 
-    private void extractLocalSuppliers() {
+    private void exportSalesWithAndWithoutDiscount() {
+        List<SaleDiscountsViewModel> sales = this.saleService.salesWithDiscount();
+        this.jsonParser.objectToFile(sales, RESOURCES_PATH + "/output/sales-discounts.json");
+    }
+
+    private void exportCustomersTotalSales() {
+        List<CustomerTotalSalesViewModel> customersTotalSales = this.customerService.customersTotalSales();
+        this.jsonParser.objectToFile(customersTotalSales, RESOURCES_PATH + "/output/customers-total-sales.json");
+    }
+
+    private void exportCarsWithParts() {
+        List<CarViewModelWithParts> cars = this.carService.carsWithParts();
+        this.jsonParser.objectToFile(cars, RESOURCES_PATH + "/output/cars-and-parts.json");
+    }
+
+    private void exportLocalSuppliers() {
         List<SupplierViewModel> localSuppliers = this.supplierService.getLocalSuppliers();
         this.jsonParser.objectToFile(localSuppliers, RESOURCES_PATH + "/output/local-suppliers.json");
     }

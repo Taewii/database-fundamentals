@@ -1,7 +1,8 @@
 package app.services.customer;
 
 import app.models.dto.binding.CustomerDto;
-import app.models.dto.view.CustomerViewModel;
+import app.models.dto.view.customer.CustomerTotalSalesViewModel;
+import app.models.dto.view.customer.CustomerViewModel;
 import app.models.entity.Customer;
 import app.repositories.CustomerRepository;
 import org.modelmapper.ModelMapper;
@@ -43,5 +44,25 @@ public class CustomerServiceImpl implements CustomerService {
         return customers.stream()
                 .map(c -> this.modelMapper.map(c, CustomerViewModel.class))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<CustomerTotalSalesViewModel> customersTotalSales() {
+        List<Customer> all = this.customerRepository.findAll();
+        all.removeIf(c -> c.getSales().size() == 0);
+
+        List<CustomerTotalSalesViewModel> customers = all.stream()
+                .map(c -> this.modelMapper.map(c, CustomerTotalSalesViewModel.class))
+                .collect(Collectors.toList());
+
+        return customers.stream().sorted((a, b) -> {
+            int result = b.getSpentMoney().compareTo(a.getSpentMoney());
+
+            if (result == 0) {
+                result = Integer.compare(b.getBoughtCars(), a.getBoughtCars());
+            }
+
+            return result;
+        }).collect(Collectors.toList());
     }
 }

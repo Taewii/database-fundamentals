@@ -1,7 +1,8 @@
 package app.services.car;
 
 import app.models.dto.binding.CarDto;
-import app.models.dto.view.CarViewModel;
+import app.models.dto.view.car.CarViewModel;
+import app.models.dto.view.car.CarViewModelWithParts;
 import app.models.entity.Car;
 import app.models.entity.Part;
 import app.repositories.CarRepository;
@@ -59,5 +60,13 @@ public class CarServiceImpl implements CarService {
         List<Car> cars = this.carRepository.carsByBrandNameOrderedByModelAndTravelledDistance(brand);
 
         return cars.stream().map(c -> this.modelMapper.map(c, CarViewModel.class)).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<CarViewModelWithParts> carsWithParts() {
+        List<Car> cars = this.carRepository.findAll();
+        return cars.stream()
+                .map(c -> this.modelMapper.map(c, CarViewModelWithParts.class))
+                .collect(Collectors.toList());
     }
 }

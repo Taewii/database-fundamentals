@@ -1,6 +1,7 @@
-package app.models.dto.view;
+package app.models.dto.view.sale;
 
 import app.models.dto.binding.CustomerDto;
+import app.models.dto.view.car.CarViewModel;
 
 import java.io.Serializable;
 

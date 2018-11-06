@@ -1,23 +1,18 @@
-package app.models.dto.view;
+package app.models.dto.view.car;
+
+import app.models.dto.view.part.PartViewModel;
 
 import java.io.Serializable;
+import java.util.Set;
 
-public class CarViewModel implements Serializable {
+public class CarViewModelWithParts implements Serializable {
 
-    private Long id;
     private String make;
     private String model;
     private Long travelledDistance;
+    private Set<PartViewModel> parts;
 
-    public CarViewModel() {
-    }
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+    public CarViewModelWithParts() {
     }
 
     public String getMake() {
@@ -43,4 +38,13 @@ public class CarViewModel implements Serializable {
     public void setTravelledDistance(Long travelledDistance) {
         this.travelledDistance = travelledDistance;
     }
+
+    public Set<PartViewModel> getParts() {
+        return this.parts;
+    }
+
+    public void setParts(Set<PartViewModel> parts) {
+        this.parts = parts;
+    }
 }
+

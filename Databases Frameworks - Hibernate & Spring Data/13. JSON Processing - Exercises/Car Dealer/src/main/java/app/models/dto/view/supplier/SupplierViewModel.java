@@ -1,4 +1,4 @@
-package app.models.dto.view;
+package app.models.dto.view.supplier;
 
 import java.io.Serializable;
 
