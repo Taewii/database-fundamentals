@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<products>
+    <product name="Parsley" price="519.06" seller="Patricia Cooper"/>
+    <product name="TERSI" price="554.91" seller="Jennifer Riley"/>
+    <product name="Glipizide" price="621.78" seller="Anna Parker"/>
+    <product name="CALMING DIAPER RASH" price="700.92" seller="Arthur Reynolds"/>
+    <product name="Warfarin Sodium" price="770.05" seller="Rachel Johnson"/>
+    <product name="Care One Hemorrhoidal" price="932.18" seller="Doris Cook"/>
+    <product name="Metformin Hydrochloride" price="953.99"/>
+    <product name="Homeopathic Rheumatism" price="967.08"/>
+    <product name="Retin-A MICRO" price="995.98" seller="Carl Daniels"/>
+</products>
