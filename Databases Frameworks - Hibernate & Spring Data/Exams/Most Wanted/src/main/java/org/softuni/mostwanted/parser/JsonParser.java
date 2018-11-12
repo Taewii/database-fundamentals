@@ -13,7 +13,7 @@ public class JsonParser implements Parser {
     public JsonParser() {
         this.gson = new GsonBuilder()
                 .setPrettyPrinting()
-                .excludeFieldsWithoutExposeAnnotation()
+//                .excludeFieldsWithoutExposeAnnotation()
                 .create();
     }
 

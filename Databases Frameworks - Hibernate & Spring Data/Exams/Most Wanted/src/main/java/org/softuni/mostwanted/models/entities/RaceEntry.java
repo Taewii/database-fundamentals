@@ -8,7 +8,7 @@ public class RaceEntry {
 
     private Integer id;
     private Boolean hasFinished;
-    private Integer finishTime;
+    private Double finishTime;
     private Car car;
     private Racer racer;
     private Race race;
@@ -34,11 +34,11 @@ public class RaceEntry {
         this.hasFinished = hasFinished;
     }
 
-    public Integer getFinishTime() {
+    public Double getFinishTime() {
         return this.finishTime;
     }
 
-    public void setFinishTime(Integer finishTime) {
+    public void setFinishTime(Double finishTime) {
         this.finishTime = finishTime;
     }
 

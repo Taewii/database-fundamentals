@@ -1,12 +1,14 @@
 package org.softuni.mostwanted.parser;
 
 import org.softuni.mostwanted.parser.interfaces.Parser;
+import org.springframework.stereotype.Component;
 
 import javax.xml.bind.*;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
 
+@Component
 public class XmlParser implements Parser {
 
     @Override

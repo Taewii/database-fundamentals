@@ -7,5 +7,5 @@ import org.softuni.mostwanted.models.entities.District;
 @Repository
 public interface DistrictRepository extends JpaRepository<District,Integer> {
 
-
+    District getDistinctByName(String name);
 }

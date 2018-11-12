@@ -1,9 +1,11 @@
 package org.softuni.mostwanted.io.impl;
 
 import org.softuni.mostwanted.io.interfaces.FileIO;
+import org.springframework.stereotype.Component;
 
 import java.io.*;
 
+@Component
 public class FileIOImpl implements FileIO {
 
     @Override
