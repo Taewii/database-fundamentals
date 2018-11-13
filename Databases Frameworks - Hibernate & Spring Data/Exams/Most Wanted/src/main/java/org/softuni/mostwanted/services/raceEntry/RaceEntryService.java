@@ -7,6 +7,7 @@ import org.softuni.mostwanted.models.entities.RaceEntry;
 import java.util.List;
 
 public interface RaceEntryService {
+
     String create(RaceEntryXmlImportDTO raceDto);
 
     RaceEntry getRaceEntryById(Integer id);

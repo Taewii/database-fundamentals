@@ -19,7 +19,7 @@ public class RaceXmlImportDTO implements Serializable {
 
     @XmlElementWrapper(name = "entries")
     @XmlElement(name = "entry")
-    private List<RaceEntryDto> entries;
+    private List<RaceEntryDTO> entries;
 
     public RaceXmlImportDTO() {
     }
@@ -40,11 +40,11 @@ public class RaceXmlImportDTO implements Serializable {
         this.districtName = districtName;
     }
 
-    public List<RaceEntryDto> getEntries() {
+    public List<RaceEntryDTO> getEntries() {
         return this.entries;
     }
 
-    public void setEntries(List<RaceEntryDto> entries) {
+    public void setEntries(List<RaceEntryDTO> entries) {
         this.entries = entries;
     }
 }

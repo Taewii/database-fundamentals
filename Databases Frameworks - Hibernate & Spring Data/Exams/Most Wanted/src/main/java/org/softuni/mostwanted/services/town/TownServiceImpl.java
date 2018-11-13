@@ -2,7 +2,6 @@ package org.softuni.mostwanted.services.town;
 
 import org.softuni.mostwanted.Config;
 import org.softuni.mostwanted.models.dtos.binding.json.TownJsonImportDTO;
-import org.softuni.mostwanted.models.dtos.view.json.RacingTownsJsonExportDTO;
 import org.softuni.mostwanted.models.entities.Town;
 import org.softuni.mostwanted.parser.ValidationUtil;
 import org.softuni.mostwanted.parser.interfaces.ModelParser;
@@ -10,8 +9,6 @@ import org.softuni.mostwanted.repositories.TownRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 @Service
 @Transactional
@@ -49,11 +46,5 @@ public class TownServiceImpl implements TownService {
     @Override
     public Town getTownByName(String name) {
         return this.townRepository.getTownByName(name);
-    }
-
-    @Override
-    public List<RacingTownsJsonExportDTO> getRacingTownsWithRacersCount() {
-        //TODO
-        return null;
     }
 }

@@ -5,8 +5,7 @@ import java.io.Serializable;
 
 @XmlRootElement(name = "race-entry")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class RaceEntryXmlImportDTO implements Serializable
-{
+public class RaceEntryXmlImportDTO implements Serializable {
     @XmlAttribute(name = "has-finished")
     private Boolean hasFinished;
 

@@ -16,7 +16,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -58,6 +57,7 @@ public class RaceEntryServiceImpl implements RaceEntryService {
 
         this.raceEntryRepository.saveAndFlush(raceEntry);
 
+        //not sure why getId() is producing random id's
         return String.format(Config.SUCCESSFUL_IMPORT_MESSAGE, "RaceEntry", raceEntry.getId());
     }
 
@@ -79,8 +79,7 @@ public class RaceEntryServiceImpl implements RaceEntryService {
                 .filter(re -> re.getRacer().getId() == racer.getId())
                 .collect(Collectors.toList());
 
-        List<EntryXmlExportDTO> entries = new ArrayList<>();
-        for (RaceEntry entry : raceEntries) {
+        List<EntryXmlExportDTO> entriesDto = raceEntries.stream().map(entry -> {
             String carInfo = String.format("%s %s @ %d",
                     entry.getCar().getBrand(),
                     entry.getCar().getModel(),
@@ -89,12 +88,12 @@ public class RaceEntryServiceImpl implements RaceEntryService {
             EntryXmlExportDTO dto = new EntryXmlExportDTO();
             dto.setCar(carInfo);
             dto.setFinishTime(entry.getFinishTime());
-            entries.add(dto);
-        }
+            return dto;
+        }).collect(Collectors.toList());
 
         RacerXmlExportDTO racerDto = new RacerXmlExportDTO();
         racerDto.setName(racer.getName());
-        racerDto.setEntries(entries.stream()
+        racerDto.setEntries(entriesDto.stream()
                 .sorted(Comparator.comparing(EntryXmlExportDTO::getFinishTime))
                 .collect(Collectors.toList()));
 

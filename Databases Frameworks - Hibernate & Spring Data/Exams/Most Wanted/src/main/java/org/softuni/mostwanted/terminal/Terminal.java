@@ -4,10 +4,6 @@ import org.softuni.mostwanted.Config;
 import org.softuni.mostwanted.controllers.*;
 import org.softuni.mostwanted.io.interfaces.ConsoleIO;
 import org.softuni.mostwanted.io.interfaces.FileIO;
-import org.softuni.mostwanted.models.entities.Racer;
-import org.softuni.mostwanted.repositories.RaceEntryRepository;
-import org.softuni.mostwanted.repositories.RaceRepository;
-import org.softuni.mostwanted.repositories.RacerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -15,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.xml.bind.JAXBException;
 import java.io.IOException;
-import java.util.List;
 
 @Component
 @Transactional
@@ -61,10 +56,12 @@ public class Terminal implements CommandLineRunner {
             this.consoleIO.write(this.raceController.importDataFromXml(this.fileIO.read(Config.RACES_IMPORT_XML)));
 
             //export
-            this.fileIO.write(this.townController.exportRacerTownsAsJson(), Config.TOWNS_BY_RACERS_EXPORT_JSON);
-            //TODO ↓↓↓↓↓↓
-            //this.fileIO.write(this.racerController.exportRacersWithCars(), Config.RACERS_WITH_CARS_EXPORT_JSON);
+            //This should come from the TownController, but I can't figure out how to join the sql tables...
+            this.fileIO.write(this.racerController.exportRacerTownsAsJson(), Config.TOWNS_BY_RACERS_EXPORT_JSON);
+            this.fileIO.write(this.racerController.exportRacersWithCars(), Config.RACERS_WITH_CARS_EXPORT_JSON);
+            //Same as above, should come from the RaceController
             this.fileIO.write(this.raceEntryController.exportMostWantedRacer(), Config.MOST_WANTED_RACER_EXPORT_XML);
+
         } catch (IOException | JAXBException e) {
             e.printStackTrace();
         }

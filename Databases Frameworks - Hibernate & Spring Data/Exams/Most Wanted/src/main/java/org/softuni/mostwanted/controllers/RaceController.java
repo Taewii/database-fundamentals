@@ -13,8 +13,8 @@ import java.io.IOException;
 @Controller
 public class RaceController {
 
-    private RaceService raceService;
-    private Parser xmlParser;
+    private final RaceService raceService;
+    private final Parser xmlParser;
 
     @Autowired
     public RaceController(RaceService raceService, Parser xmlParser) {

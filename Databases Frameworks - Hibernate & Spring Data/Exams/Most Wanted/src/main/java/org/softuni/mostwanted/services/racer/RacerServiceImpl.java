@@ -3,6 +3,7 @@ package org.softuni.mostwanted.services.racer;
 import org.softuni.mostwanted.Config;
 import org.softuni.mostwanted.models.dtos.binding.json.RacerJsonImportDTO;
 import org.softuni.mostwanted.models.dtos.view.json.RacingCarsJsonExportDTO;
+import org.softuni.mostwanted.models.dtos.view.json.RacingTownsJsonExportDTO;
 import org.softuni.mostwanted.models.entities.Racer;
 import org.softuni.mostwanted.models.entities.Town;
 import org.softuni.mostwanted.parser.ValidationUtil;
@@ -91,5 +92,10 @@ public class RacerServiceImpl implements RacerService {
 
     public Racer getMostWantedRacer() {
         return this.racerRepository.mostWantedRacers().stream().findFirst().orElse(null);
+    }
+
+    @Override
+    public List<RacingTownsJsonExportDTO> racingTownsWithRacersCount() {
+        return this.racerRepository.getRacingTownsWithRacersCount();
     }
 }

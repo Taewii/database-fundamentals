@@ -23,17 +23,13 @@ public class TownController {
     }
 
     public String importDataFromJson(String content) throws IOException, JAXBException {
-        StringBuilder sb = new StringBuilder();
         TownJsonImportDTO[] towns = this.jsonParser.read(TownJsonImportDTO[].class, content);
 
+        StringBuilder sb = new StringBuilder();
         for (TownJsonImportDTO town : towns) {
             sb.append(this.townService.create(town)).append(System.lineSeparator());
         }
 
         return sb.toString().trim();
-    }
-
-    public String exportRacerTownsAsJson() throws IOException, JAXBException {
-        return this.jsonParser.write(this.townService);
     }
 }
