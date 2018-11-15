@@ -1,14 +1,10 @@
 package org.softuni.ruk.controllers;
 
-import org.softuni.ruk.models.dtos.EmployeeJsonImportDTO;
-import org.softuni.ruk.parser.interfaces.ModelParser;
+import org.softuni.ruk.models.dtos.binding.json.EmployeeJsonImportDTO;
 import org.softuni.ruk.parser.interfaces.Parser;
 import org.softuni.ruk.services.employee.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-
-import javax.xml.bind.JAXBException;
-import java.io.IOException;
 
 @Controller
 public class EmployeeController {
@@ -23,18 +19,17 @@ public class EmployeeController {
     }
 
     public String importEmployeesFromJson(String content) {
-        try {
-            EmployeeJsonImportDTO[] employees = this.jsonParser.read(EmployeeJsonImportDTO[].class, content);
+        EmployeeJsonImportDTO[] employees = this.jsonParser.read(EmployeeJsonImportDTO[].class, content);
 
-            StringBuilder sb = new StringBuilder();
-            for (EmployeeJsonImportDTO employee : employees) {
-                sb.append(this.employeeService.create(employee)).append(System.lineSeparator());
-            }
-
-            return sb.toString().trim();
-        } catch (IOException | JAXBException e) {
-            e.printStackTrace();
+        StringBuilder sb = new StringBuilder();
+        for (EmployeeJsonImportDTO employee : employees) {
+            sb.append(this.employeeService.create(employee)).append(System.lineSeparator());
         }
-        return null;
+
+        return sb.toString().trim();
+    }
+
+    public String exportTopEmployees() {
+        return this.jsonParser.write(this.employeeService.getTopEmployees());
     }
 }

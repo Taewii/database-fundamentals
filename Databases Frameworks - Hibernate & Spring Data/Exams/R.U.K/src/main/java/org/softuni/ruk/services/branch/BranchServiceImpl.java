@@ -1,7 +1,7 @@
 package org.softuni.ruk.services.branch;
 
 import org.softuni.ruk.Constants;
-import org.softuni.ruk.models.dtos.BranchJsonImportDTO;
+import org.softuni.ruk.models.dtos.binding.json.BranchJsonImportDTO;
 import org.softuni.ruk.models.entities.Branch;
 import org.softuni.ruk.parser.ValidationUtil;
 import org.softuni.ruk.parser.interfaces.ModelParser;

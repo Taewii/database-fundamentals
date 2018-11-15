@@ -1,4 +1,4 @@
-package org.softuni.ruk.models.dtos;
+package org.softuni.ruk.models.dtos.binding.json;
 
 import com.google.gson.annotations.SerializedName;
 

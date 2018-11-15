@@ -46,5 +46,11 @@ public class Terminal implements CommandLineRunner {
         this.consoleIO.write(this.branchController.importBranchesFromJson(this.fileIO.read(BRANCHES_IMPORT_JSON)));
         this.consoleIO.write(this.employeeController.importEmployeesFromJson(this.fileIO.read(EMPLOYEES_IMPORT_JSON)));
         this.consoleIO.write(this.clientController.importClientsFromJson(this.fileIO.read(CLIENTS_IMPORT_JSON)));
+        this.consoleIO.write(this.bankAccountController.importBankAccountsFromXml(this.fileIO.read(BANK_ACCOUNTS_IMPORT_XML)));
+        this.consoleIO.write(this.cardController.importCardsFromXml(this.fileIO.read(CARDS_IMPORT_XML)));
+
+        //export
+        this.fileIO.write(this.employeeController.exportTopEmployees(), TOP_EMPLOYEES_EXPORT_JSON);
+        this.fileIO.write(this.clientController.exportFamilyGuy(), FAMILY_GUY_EXPORT_XML);
     }
 }
